@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +12,21 @@
         }
         .result {
             margin-top: 20px;
+        }
+        .btn-combinations {
+            display: block;
+            margin: 20px auto; /* 20px de margem superior e inferior, automático nas laterais */
+            padding: 10px 20px; /* Espaçamento interno para o botão */
+            background-color: orange; /* Cor de fundo do botão */
+            color: white; /* Cor do texto */
+            border: none; /* Remover borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Mudar o cursor ao passar sobre o botão */
+            font-size: 16px; /* Tamanho da fonte */
+        }
+        
+        .btn-combinations:hover {
+            background-color: #45a049; /* Cor de fundo ao passar o mouse */
         }
     </style>
 </head>
@@ -85,7 +99,7 @@
         </div>
         <p>
         </p>
-        <button type="button" onclick="showCombination()" style="text-align: center;">Ver Combinações</button>
+        <button type="button" class="btn-combinations" onclick="showCombination()" style="text-align: center;">Ver Combinações</button>
     </form>
 
     <div id="result" class="result"></div>
@@ -99,7 +113,8 @@
             var resultText = '';
 
             if (queijo) {
-                resultText += '<h2>Combinações para o queijo ' + queijo.charAt(0).toUpperCase() + queijo.slice(1) + ':</h2>';
+                resultText += '<h2>Combinações para o queijo ' + queijo.replace('_', ' ').charAt(0).toUpperCase() + queijo.replace('_', ' ').slice(1) + ':</h2>';
+                
                 if (queijo === 'manchego') {
                     resultText += '<p>Combina bem com: Cinsault, Mourvèdre, Porto e Tempranillo.</p>';
                 } else if (queijo === 'gouda') {
