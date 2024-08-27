@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinação de Queijos e Vinhos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body data-rsssl=1>
+
+    <h1>Combinação de Queijos e Vinhos</h1>
+
+    <form id="combinationForm">
+        <div class="form-group" style="display: inline-block; text-align: center; width: 270px">
+            <label for="tipo_queijo">Escolha um queijo:</label>
+            <select name="tipo_queijo" id="tipo_queijo">
+                <option value="">Selecione...</option>
+                <option value="manchego">Manchego</option>
+                <option value="gouda">Gouda</option>
+                <option value="raclette">Raclette</option>
+                <option value="emmental">Emmental</option>
+                <option value="gruyere">Gruyère</option>
+                <option value="roquefort">Roquefort</option>
+                <option value="gorgonzola">Gorgonzola</option>
+                <option value="stilton">Stilton</option>
+                <option value="epoisses">Epoisses</option>
+                <option value="munster">Munster</option>
+                <option value="taleggio">Taleggio</option>
+                <option value="reblochon">Reblochon</option>
+                <option value="valencay">Valençay</option>
+                <option value="serra_da_estrela">Serra da Estrela</option>
+                <option value="brie">Brie</option>
+                <option value="camembert">Camembert</option>
+                <option value="saint_nectaire">Saint Nectaire</option>
+                <option value="pecorino_romano">Pecorino Romano</option>
+                <option value="parmesao">Parmesão</option>
+                <option value="grana_padano">Grana Padano</option>
+                <option value="comte">Comte</option>
+                <option value="canastra">Canastra</option>
+                <option value="chevre">Chèvre</option>
+                <option value="ricotta">Ricotta</option>
+                <option value="mozzarella">Mozzarella</option>
+                <option value="frescal">Frescal</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+        </div> 
+        <div style="display: inline-block; text-align: center; height: 10px; width: 30px;">
+            OU
+        </div>
+        <div class="form-group" style="display: inline-block; text-align: center;">
+            <label for="tipo_vinho">Escolha um vinho:</label>
+            <select name="tipo_vinho" id="tipo_vinho">
+                <option value="">Selecione...</option>
+                <option value="cabernet_sauvignon">Cabernet Sauvignon</option>
+                <option value="merlot">Merlot</option>
+                <option value="pinot_noir">Pinot Noir</option>
+                <option value="syrah">Syrah/Shiraz</option>
+                <option value="malbec">Malbec</option>
+                <option value="tempranillo">Tempranillo</option>
+                <option value="grenache">Grenache</option>
+                <option value="nebbiolo">Nebbiolo</option>
+                <option value="sangiovese">Sangiovese</option>
+                <option value="chardonnay">Chardonnay</option>
+                <option value="sauvignon_blanc">Sauvignon Blanc</option>
+                <option value="riesling">Riesling</option>
+                <option value="chenin_blanc">Chenin Blanc</option>
+                <option value="viognier">Viognier</option>
+                <option value="pinot_grigio">Pinot Grigio</option>
+                <option value="traminer">Gewürztraminer</option>
+                <option value="cinsault">Cinsault</option>
+                <option value="mourvedre">Mourvèdre</option>
+                <option value="porto">Porto</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+        </div>
+        <p>
+        </p>
+        <button type="button" onclick="showCombination()" style="text-align: center;">Ver Combinações</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function showCombination() {
+            var queijo = document.getElementById("tipo_queijo").value;
+            var vinho = document.getElementById("tipo_vinho").value;
+            var resultDiv = document.getElementById("result");
+
+            var resultText = '';
+
+            if (queijo) {
+                resultText += '<h2>Combinações para o queijo ' + queijo.charAt(0).toUpperCase() + queijo.slice(1) + ':</h2>';
+                if (queijo === 'manchego') {
+                    resultText += '<p>Combina bem com: Cinsault, Mourvèdre, Porto e Tempranillo.</p>';
+                } else if (queijo === 'gouda') {
+                    resultText += '<p>Combina bem com: Cabernet Sauvignon, Grenache, Viognier e Cinsault.</p>';
+                } else if (queijo === 'gruyere') {
+                    resultText += '<p>Combina bem com: Merlot, Syrah/Shiraz, Mourvèdre e Pinot Noir.</p>';
+                } else if (queijo === 'brie') {
+                    resultText += '<p>Combina bem com: Chardonnay, Riesling e Merlot.</p>';
+                } else if (queijo === 'camembert') {
+                    resultText += '<p>Combina bem com: Pinot Noir, Granache e Chenin Blanc.</p>';
+                } else if (queijo === 'raclette') {
+                    resultText += '<p>Combina bem com: Chardonnay e Mourvèdre.</p>';
+                } else if (queijo === 'emmental') {
+                    resultText += '<p>Combina bem com: Pinot Noir tinto ou rose e Malbec.</p>';
+                } else if (queijo === 'roquefort') {
+                    resultText += '<p>Combina bem com: Syrah/Shiraz, Riesling e vinho do Porto.</p>';
+                } else if (queijo === 'gorgonzola') {
+                    resultText += '<p>Combina bem com: Tempranillo, Gewürztraminer, Syrah/Shiraz e vinho do Porto.</p>';
+                } else if (queijo === 'stilton') {
+                    resultText += '<p>Combina bem com: Cabernet Sauvignon, Riesling e vinho do Porto.</p>';
+                } else if (queijo === 'epoisses') {
+                    resultText += '<p>Combina bem com: Pinot Noir, e Cinsault.</p>';
+                } else if (queijo === 'munster') {
+                    resultText += '<p>Combina bem com: Riesling e Gewürztraminer.</p>';
+                } else if (queijo === 'taleggio') {
+                    resultText += '<p>Combina bem com: Grenache tinto ou rose, Sangiovese e Gewürztraminer.</p>';
+                } else if (queijo === 'reblochon') {
+                    resultText += '<p>Combina bem com: Malbec e Nebbiolo.</p>';
+                } else if (queijo === 'valencay') {
+                    resultText += '<p>Combina bem com: Sauvignon Blanc e Chenin Blanc.</p>';
+                } else if (queijo === 'serra_da_estrela') {
+                    resultText += '<p>Combina bem com: vinho do Porto.</p>';
+                } else if (queijo === 'saint_nectaire') {
+                    resultText += '<p>Combina bem com: Viognier, Granache e Chenin Blanc.</p>';
+                } else if (queijo === 'pecorino_romano') {
+                    resultText += '<p>Combina bem com: Malbec, Nebbiolo, Sangiovese e vinho do Porto.</p>';
+                } else if (queijo === 'parmesao') {
+                    resultText += '<p>Combina bem com: Tempranillo, Nebbiolo, Sangiovese e vinho do Porto.</p>';
+                } else if (queijo === 'grana_padano') {
+                    resultText += '<p>Combina bem com: Cabernet Sauvignon, Syrah/Shiraz e Pinot Grigio.</p>';
+                } else if (queijo === 'comte') {
+                    resultText += '<p>Combina bem com: Merlot, Chardonnay, Sauvignon Blanc e Syrah/Shiraz.</p>';
+                } else if (queijo === 'canastra') {
+                    resultText += '<p>Combina bem com: Malbec e Syrah/Shiraz.</p>';
+                } else if (queijo === 'chevre') {
+                    resultText += '<p>Combina bem com: Sauvignon Blanc e Viognier.</p>';
+                } else if (queijo === 'ricotta') {
+                    resultText += '<p>Combina bem com: Granache.</p>';
+                } else if (queijo === 'mozzarella') {
+                    resultText += '<p>Combina bem com: Sauvignon Blanc e Pinot Grigio.</p>';
+                } else if (queijo === 'frescal') {
+                    resultText += '<p>Combina bem com: Pinot Grigio e Chenin Blanc.</p>';
+                }
+                // Adicione mais combinações conforme necessário
+            }
+
+            if (vinho) {
+                resultText += '<h2>Combinações para o vinho ' + vinho.replace('_', ' ').charAt(0).toUpperCase() + vinho.replace('_', ' ').slice(1) + ':</h2>';
+                if (vinho === 'cabernet_sauvignon') {
+                    resultText += '<p>Combina bem com: Grana Padano, Gouda e Stilton.</p>';
+                } else if (vinho === 'merlot') {
+                    resultText += '<p>Combina bem com: Gruyere, Brie e Comte.</p>';
+                } else if (vinho === 'pinot_noir') {
+                    resultText += '<p>Se Tinto, combina bem com: Emmental, Epoisses e Camembert.</p>';
+                    resultText += '<p>Se Rose, combina bem com: Gruyere, Emmental e Camembert.</p>'
+                } else if (vinho === 'chardonnay') {
+                    resultText += '<p>Combina bem com: Brie, Raclette e Comte.</p>';
+                } else if (vinho === 'sauvignon_blanc') {
+                    resultText += '<p>Combina bem com: Chèvre, Mozzarella, Comte e Valençay.</p>';
+                } else if (vinho === 'syrah') {
+                    resultText += '<p>Se Tinto, combina bem com: Roquefort, Gruyere e Grana Padano.</p>';
+                    resultText += '<p>Se Rose, combina bem com: Gorgonzola, Canastra e Comte.</p>';
+                } else if (vinho === 'malbec') {
+                    resultText += '<p>Combina bem com: Pecorino Romano, Reblochon, Emmental e Canastra.</p>';
+                } else if (vinho === 'tempranillo') {
+                    resultText += '<p>Combina bem com: Manchego, Parmesão e Gorgonzola.</p>';
+                } else if (vinho === 'grenache') {
+                    resultText += '<p>Se Tinto, combina bem com: Camembert, Taleggio e Gouda.</p>';
+                    resultText += '<p>Se Rose, combina bem com: Saint Nectaire, Ricotta e Taleggio.</p>'
+                } else if (vinho === 'nebbiolo') {
+                    resultText += '<p>Combina bem com: Parmesão, Pecorino Romano e Reblochon.</p>';
+                } else if (vinho === 'sangiovese') {
+                    resultText += '<p>Combina bem com: Parmesão, Pecorino Romano e Taleggio.</p>';
+                } else if (vinho === 'riesling') {
+                    resultText += '<p>Combina bem com: Roquefort, Munster e Brie.</p>';
+                } else if (vinho === 'chenin_blanc') {
+                    resultText += '<p>Combina bem com: Saint Nectaire, Camembert, Valençay e Frescal.</p>';
+                } else if (vinho === 'viognier') {
+                    resultText += '<p>Combina bem com: Saint Nectaire, Gouda e Chèvre.</p>';
+                } else if (vinho === 'pinot_grigio') {
+                    resultText += '<p>Combina bem com: Grana Padano, Mozzarella e Frescal.</p>';
+                } else if (vinho === 'traminer') {
+                    resultText += '<p>Combina bem com: Munster, Taleggio e Gorgonzola.</p>';
+                } else if (vinho === 'cinsault') {
+                    resultText += '<p>Combina bem com: Gouda, Manchego e Epoisses.</p>';
+                } else if (vinho === 'mourvedre') {
+                    resultText += '<p>Combina bem com: Manchego, Gruyere e Raclette.</p>';
+                } else if (vinho === 'porto') {
+                    resultText += '<p>Combina bem com queijos fortes, azuis  e/ou amanteigados.</p>';
+                    resultText += '<p>Exemplos: Stilton, Gorgonzola, Roquefort, Serra da Estrela, Parmesão e Manchego.</p>';
+                }
+                // Adicione mais combinações conforme necessário
+            }
+
+            if (!queijo && !vinho) {
+                resultText = '<p>Por favor, selecione um queijo ou um vinho para ver as combinações.</p>';
+            }
+
+            resultDiv.innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
