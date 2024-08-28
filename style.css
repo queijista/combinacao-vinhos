@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.result {
+  font-size: 25px;
+}
+.btn-combinations {
+  display: block;
+  margin: 20px auto; /* 20px de margem superior e inferior, automático nas laterais */
+  padding: 10px 20px; /* Espaçamento interno para o botão */
+  background-color: orange; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Remover borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Mudar o cursor ao passar sobre o botão */
+  font-size: 16px; /* Tamanho da fonte */
+}
